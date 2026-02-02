@@ -12,6 +12,7 @@ wheels/
 # VSCode settings
 .vscode
 .env
+.DS_Store
 
 # Test directories
 /test-videos
