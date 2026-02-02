@@ -11,8 +11,6 @@ A high-performance tool that automatically detects humans in surveillance videos
 
 ---
 
-## English
-
 ### Features
 
 - **Human Detection**: Detect people in surveillance videos using YOLOv8
