@@ -1,8 +1,11 @@
-# Surveillance Video Human Detector + Auto Merging
+# Surveillance Video Human Detector
 
-A high-performance Python tool for detecting human presence in surveillance videos, extracting video segments containing people, and merging them into highlight clips. Uses YOLOv8 for person detection and FFmpeg for video processing with multi-threaded decoding.
+> 🎯 **Free up storage space** - Storage costs are skyrocketing  
+> 👨‍👩‍👧 **Keep meaningful moments** - Preserve clips with family & people  
+> ✂️ **Smart compression** - Cut static scenes, merge fragments  
+> 🔒 **100% local processing** - Your data never leaves your device
 
-监控视频人形检测工具 - 自动检测监控视频中的人物，裁剪包含人物的片段，并合并输出。采用多进程架构和 FFmpeg 多线程解码，高效利用多核 CPU。
+A high-performance tool that automatically detects humans in surveillance videos, extracts meaningful clips, and merges them into highlight reels. Uses YOLOv8 for local AI detection and FFmpeg for efficient video processing.
 
 [中文](README_CN.md) | [English](README.md)
 
