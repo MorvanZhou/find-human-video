@@ -105,15 +105,17 @@ uv run python pipeline.py ./videos --model yolov8s.pt
 
 #### Auto Configuration
 
-The pipeline automatically configures workers based on CPU cores:
+The pipeline automatically configures workers based on CPU cores (optimized for FFmpeg decode bottleneck):
 
-| CPU Cores | I/O Workers | Detectors | Batch Size |
-|-----------|-------------|-----------|------------|
-| 1-2       | 2           | 1         | 16         |
-| 3-4       | 4           | 2         | 32         |
-| 5-8       | 10          | 6         | 48         |
-| 9-16      | 16          | 10        | 64         |
-| 17+       | 20          | 14        | 64         |
+| CPU Cores | I/O Workers | Detectors | Batch Size | Decode Threads |
+|-----------|-------------|-----------|------------|----------------|
+| 1-2       | 1           | 1         | 16         | 2              |
+| 3-4       | 2           | 2         | 32         | 2              |
+| 5-8       | 2           | 4         | 48         | 4              |
+| 9-16      | 3           | 6         | 64         | 4              |
+| 17+       | 4           | 8         | 64         | 6              |
+
+> **Note:** Fewer I/O Workers with more decode threads per worker provides better throughput for high-resolution videos (e.g., 2304x1296), as FFmpeg decoding is the primary bottleneck.
 
 #### Pipeline Architecture
 

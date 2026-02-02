@@ -71,8 +71,9 @@ def set_file_times(file_path: str, times: dict) -> bool:
     """
     try:
         # 设置访问时间和修改时间
-        access_time = times.get('accessed_time', times.get('modified_time'))
-        modified_time = times.get('modified_time')
+        modified_time: float = times.get('modified_time')
+        access_time: float = times.get('accessed_time', modified_time)
+        
         
         if modified_time:
             os.utime(file_path, (access_time, modified_time))

@@ -417,7 +417,7 @@ def list_parsers() -> list[dict]:
     return result
 
 
-def register_parser(brand: str, parser_class: Type[BaseTimestampParser], aliases: list[str] = None):
+def register_parser(brand: str, parser_class: Type[BaseTimestampParser], aliases: list[str] | None = None):
     """
     注册新的时间戳解析器
     
@@ -462,7 +462,7 @@ class AutoDetectParser(BaseTimestampParser):
     brand = "auto"
     description = "自动检测: 依次尝试所有解析器"
     
-    def __init__(self, priority: list[str] = None):
+    def __init__(self, priority: list[str] | None = None):
         """
         初始化自动检测解析器
         
